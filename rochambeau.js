@@ -3,7 +3,7 @@
 var score = [0,0,0];
 
 // The variables store the current player's and computer's choices
-// 0 = Rock, 1 = Paper, 2 = Scissors
+// 0 = Rock, 1 = Paper, 2 = Scissors, 3 = Lizard, 4 = Spock
 var playerChoice;
 var computerChoice;
 
@@ -17,12 +17,40 @@ function playGame(){
         // Rock beats scissors - a win!
         console.log("win");
         return 1;
+    } else if (playerChoice == 0 && computerChoice == 3) {
+        // Rock beats lizard - a win!
+        console.log("win");
+        return 1;
     } else if (playerChoice == 1 && computerChoice == 0) {
         // Paper beats scissors - a win!
         console.log("win");
         return 1;
+    } else if (playerChoice == 1 && computerChoice == 4) {
+        // Paper beats spock - a win!
+        console.log("win");
+        return 1;
     } else if (playerChoice == 2 && computerChoice == 1) {
         // Scissors beats paper - a win!
+        console.log("win");
+        return 1;
+    } else if (playerChoice == 2 && computerChoice == 3) {
+        // Scissors beats lizard - a win!
+        console.log("win");
+        return 1;
+    } else if (playerChoice == 3 && computerChoice == 4) {
+        // Lizard beats Spock - a win!
+        console.log("win");
+        return 1;
+    } else if (playerChoice == 3 && computerChoice == 1) {
+        // Lizard beats paper - a win!
+        console.log("win");
+        return 1;
+    } else if (playerChoice == 4 && computerChoice == 0) {
+        // Spock beats rock - a win!
+        console.log("win");
+        return 1;
+    } else if (playerChoice == 4 && computerChoice == 2) {
+        // Spock beats rock - a win!
         console.log("win");
         return 1;
     } else {
