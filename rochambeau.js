@@ -66,11 +66,21 @@ function displayScoreBoard(winsId, lossesId, tiesId){
     document.getElementById(tiesId).innerHTML = score[1];
 }
 
+function displayMatchBoard(winId, loseId, tieId){
+    document.getElementById(winId).innerHTML = score[0];
+    document.getElementById(loseId).innerHTML = score[2];
+    document.getElementById(tieId).innerHTML = score[1];
+}
+
 function updateScore(val){
     ++score[val];
     console.log("The score is now " + score);
 }
 
+function updateMatch(val){
+    ++score[val];
+    console.log("The match score is now...")
+}
 function displayGameResult(resultId){
     // Define an array of text labels for the choices 0, 1, 2, 3, 4;
     var choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
@@ -97,6 +107,26 @@ function displayGameResult(resultId){
     }
 }
 
+function displayMatchResult(resultsId){
+    var results =
+    if (results >= 2) {
+        // Display that it was a win
+        updateScore(0);
+        document.getElementById(resultId).innerHTML = message + "You win this match!";
+        document.getElementById(resultId).className = "alert alert-success";
+    } else if (results <= -2) {
+        updateScore(2);
+        // Display that it was a loss
+        document.getElementById(resultId).innerHTML = message + "You lose this match! ";
+        document.getElementById(resultId).className = "alert alert-danger";
+    } else {
+        // Display that it was a tie
+        updateScore(1);
+        document.getElementById(resultId).innerHTML = message + "This match was a tie. ";
+        document.getElementById(resultId).className = "alert alert-info";
+    }
+}
+
 function storePlayerChoice(choice) {
     playerChoice = choice;
     console.log("My choice = " + playerChoice);
@@ -105,6 +135,6 @@ function storePlayerChoice(choice) {
 
 function storeComputerChoice() {
     // Generate computer's random choice
-    computerChoice = Math.floor(Math.random()*3);
+    computerChoice = Math.floor(Math.random()*5);
     console.log("Computer choice = " + computerChoice);
 }
